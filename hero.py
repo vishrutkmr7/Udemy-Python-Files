@@ -1,32 +1,53 @@
 import random
 
 class Enemy:
-    atkl = 60
-    atkh = 80
+    hp = 200
+    
+    def __init__(self, atkl, atkh):
+        self.atkl = atkl
+        self.atkh = atkh
 
     def getAtk(self):
-        print(self.atkl)
+        print("Attack with", self.atkl)
 
-enemy1 = Enemy()
+    def getHp(self):
+        print("Hp:", self.hp)
+
+enemy1 = Enemy(30, 45)
 enemy1.getAtk()
+enemy1.getHp()
 
+enemy2 = Enemy(45, 75)
+enemy2.getAtk()
+enemy2.getHp()
 
-# playerhp = 260
-# enemyatkl = 60
-# enemyatkh = 80
+#Single Line Comment
 
-# while playerhp > 0:
-#     dmg = random.randrange(enemyatkl, enemyatkh)
-#     playerhp = playerhp - dmg
+'''
+Multi
+Line
+Comment
+'''
 
-#     #Reserve health 30
-#     if playerhp <= 30:
-#         playerhp = 30
+'''
+playerhp = 260
+enemyatkl = 60
+enemyatkh = 80
 
-#     print("Enemy strikes with", dmg, "Damage pts. Current Hp:", playerhp)
+while playerhp > 0:
+    dmg = random.randrange(enemyatkl, enemyatkh)
+    playerhp = playerhp - dmg
 
-#     if playerhp > 30:
-#         continue
+    #Reserve health 30
+    if playerhp <= 30:
+        playerhp = 30
+
+    print("Enemy strikes with", dmg, "Damage pts. Current Hp:", playerhp)
+
+    if playerhp > 30:
+        continue
     
-#     print("You've got low health.. Teleported tot he nearest inn.")
-#     break
+    print("You've got low health.. Teleported tot he nearest inn.")
+    break
+
+'''
