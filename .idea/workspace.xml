@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5693c61-a123-4549-bd11-9a080ef1747c" name="Default Changelist" comment="RPG Script 2">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/vishr.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battle/classes/inventory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battle/classes/magic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/battle/classes/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/battle/classes/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/battle/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/battle/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="c5693c61-a123-4549-bd11-9a080ef1747c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +25,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battle/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="335">
               <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -197,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559321582713</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RPG Script 3">
+      <created>1559414564222</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559414564222</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -208,7 +208,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.50119907" side_tool="true" weight="0.14657739" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49925596" visible="true" weight="0.3542673" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925596" weight="0.3542673" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,7 +264,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="RPG Script 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="RPG Script 2" />
+    <MESSAGE value="RPG Script 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="RPG Script 3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/battle/classes/__init__.py">
@@ -293,7 +294,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battle/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="335">
           <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
