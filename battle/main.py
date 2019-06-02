@@ -33,9 +33,9 @@ player_items = [{"item": potion, "quantity": 15}, {"item": hipotion, "quantity":
                 {"item": hielixir, "quantity": 2}, {"item": grenade, "quantity": 5}]
 
 # Instantiate People
-player1 = Person("Steve Rogers ", 3260, 132, 300, 34, player_spells, player_items)
-player2 = Person("Tony Stark   ", 4160, 188, 311, 34, player_spells, player_items)
-player3 = Person("Thor Odinson ", 3089, 174, 288, 34, player_spells, player_items)
+player1 = Person("Steve_Rogers ", 3260, 132, 300, 34, player_spells, player_items)
+player2 = Person("Tony_Stark   ", 4160, 188, 311, 34, player_spells, player_items)
+player3 = Person("Thor_Odinson ", 3089, 174, 288, 34, player_spells, player_items)
 
 enemy1 = Person("Thanos       ", 18200, 701, 525, 25, enemy_spells, [])
 enemy2 = Person("Hella        ", 1250, 130, 560, 325, enemy_spells, [])
