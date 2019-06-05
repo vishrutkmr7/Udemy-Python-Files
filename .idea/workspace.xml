@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5693c61-a123-4549-bd11-9a080ef1747c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pymongo init script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscrapery/images.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscrapery/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyCode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyCode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/vishr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/vishr.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pymongo init script.py" beforeDir="false" afterPath="$PROJECT_DIR$/pymongo init script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/udemy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,20 +16,7 @@
     <favorites_list name="MyCode" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pymongo init script.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,6 +56,7 @@
         <option value="$PROJECT_DIR$/requeststests.py" />
         <option value="$PROJECT_DIR$/webscrapery/main.py" />
         <option value="$PROJECT_DIR$/webscrapery/images.py" />
+        <option value="$PROJECT_DIR$/udemy.py" />
         <option value="$PROJECT_DIR$/pymongo init script.py" />
       </list>
     </option>
@@ -365,10 +350,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/first.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hero.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/udemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="38" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pymongo init script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="251">
+          <caret line="44" column="83" lean-forward="true" selection-start-line="44" selection-start-column="83" selection-end-line="44" selection-end-column="83" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
