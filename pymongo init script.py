@@ -39,7 +39,5 @@ print("!= ids_fotowale:", Users.find({"username": {"$ne": "ids_fotowale"}}).coun
 
 # Indexing for SCALABILITY
 # index for username
-# db.users.create_index([("username", pymongo.ASCENDING)], unique=True)
-# db.users.create_index([("username", pymongo.ASCENDING)])
 print("Index unique", db.users.create_index([("username", pymongo.ASCENDING)], unique=True))
-print("index not unique", db.users.create_index([("username", pymongo.ASCENDING)]))
+print("index not unique", db.users.create_index([("username", pymongo.ASCENDING)])) 
