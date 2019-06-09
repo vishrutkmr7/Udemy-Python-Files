@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5693c61-a123-4549-bd11-9a080ef1747c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CodeWizard/Models/LoginModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodeWizard/Models/RegisterModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodeWizard/Models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodeWizard/Views/Templates/Login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodeWizard/Models/Posts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeWizard/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/Controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeWizard/Views/Templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/Views/Templates/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeWizard/Views/Templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/Views/Templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeWizard/static/css/swag.css" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/static/css/swag.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeWizard/static/js/scripty.js" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWizard/static/js/scripty.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeWizard/Controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -36,19 +34,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CodeWizard/static/js/scripty.js">
+        <entry file="file://$PROJECT_DIR$/CodeWizard/Models/Posts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodeWizard/static/css/swag.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="106" column="1" selection-start-line="106" selection-start-column="1" selection-end-line="106" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodeWizard/Models/LoginModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="9" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodeWizard/static/js/scripty.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/Home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            <state relative-caret-position="319">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -56,10 +84,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="33" column="104" selection-start-line="33" selection-start-column="104" selection-end-line="33" selection-end-column="104" />
+            <state relative-caret-position="17">
+              <caret line="1" column="103" selection-start-line="1" selection-start-column="103" selection-end-line="1" selection-end-column="103" />
               <folding>
-                <element signature="e#1316#1322#0" expanded="true" />
                 <element signature="e#1497#1503#0" expanded="true" />
               </folding>
             </state>
@@ -125,18 +152,20 @@
         <option value="$PROJECT_DIR$/CodeWizard/Views/Templates/Register.html" />
         <option value="$PROJECT_DIR$/CodeWizard/Views/Templates/Login.html" />
         <option value="$PROJECT_DIR$/CodeWizard/Models/LoginModel.py" />
+        <option value="$PROJECT_DIR$/CodeWizard/static/css/swag.css" />
         <option value="$PROJECT_DIR$/CodeWizard/Views/Templates/Home.html" />
-        <option value="$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html" />
         <option value="$PROJECT_DIR$/CodeWizard/static/js/scripty.js" />
         <option value="$PROJECT_DIR$/CodeWizard/Controller.py" />
+        <option value="$PROJECT_DIR$/CodeWizard/Models/Posts.py" />
+        <option value="$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="92" />
-    <option name="width" value="1026" />
-    <option name="height" value="554" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -169,6 +198,13 @@
               <item name="MyCode" type="462c0819:PsiDirectoryNode" />
               <item name="CodeWizard" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyCode" type="462c0819:PsiDirectoryNode" />
+              <item name="CodeWizard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyCode" type="b2602c69:ProjectViewProjectNode" />
@@ -311,7 +347,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49880096" visible="true" weight="0.14657739" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -528,9 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeWizard/static/css/swag.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CodeWizard/static/js/popper.js" />
     <entry file="file://$PROJECT_DIR$/CodeWizard/static/js/bootstrap-material-design.min.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -587,45 +619,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/Home.html">
+    <entry file="file://$PROJECT_DIR$/CodeWizard/Models/LoginModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        <state>
+          <caret selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html">
+    <entry file="file://$PROJECT_DIR$/CodeWizard/static/css/swag.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="33" column="104" selection-start-line="33" selection-start-column="104" selection-end-line="33" selection-end-column="104" />
-          <folding>
-            <element signature="e#1316#1322#0" expanded="true" />
-            <element signature="e#1497#1503#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="562">
+          <caret line="106" column="1" selection-start-line="106" selection-start-column="1" selection-end-line="106" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CodeWizard/static/js/scripty.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        <state relative-caret-position="545">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeWizard/Models/LoginModel.py">
+    <entry file="file://$PROJECT_DIR$/CodeWizard/Models/Posts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CodeWizard/Controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        <state relative-caret-position="187">
+          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/MainLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="103" selection-start-line="1" selection-start-column="103" selection-end-line="1" selection-end-column="103" />
+          <folding>
+            <element signature="e#1497#1503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeWizard/Views/Templates/Home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>

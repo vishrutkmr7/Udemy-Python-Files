@@ -1,5 +1,5 @@
 import web
-from Models import RegisterModel, LoginModel
+from Models import RegisterModel, LoginModel, Posts
 
 web.config.debug = False
 
@@ -10,7 +10,8 @@ urls = (
     '/login', 'Login',
     '/logout', 'Logout',
     '/postregistration', 'PostRegistration',
-    '/check-login', 'CheckLogin'
+    '/check-login', 'CheckLogin',
+    '/post-activity', 'PostActivity'
 )
 
 
@@ -25,6 +26,14 @@ render = web.template.render("Views/Templates", base="MainLayout", globals={'ses
 # https://stackoverflow.com/questions/52439325/webpy-serving-static-files-staticapp-object-has-no-attribute-directory
 class Home:
     def GET(self):
+        data = type('obj', (object,), {"username": "admin", "password": "admin"})
+        # Auto login temp
+        login = LoginModel.LoginModel()
+        isCorrect = login.check_user(data)
+
+        if isCorrect:
+            session_data['user'] = isCorrect
+
         return render.Home()
 
 
@@ -57,6 +66,16 @@ class CheckLogin:
             return isCorrect
 
         return 'error'
+
+
+class PostActivity:
+    def POST(self):
+        data = web.input()
+        data.username = session_data['user']['username']
+
+        post_model = Posts.Posts()
+        post_model.insert_post(data)
+        return 'success'
 
 
 class Logout:
