@@ -64,4 +64,35 @@ $(document).ready(function(){
             }
         })
     });
+
+    $(document).on('submit', '#settings-form', function(e){
+        e.preventDefault()
+        form = $(this).serialize()
+        $ajax({
+            url: '/update-settings',
+            type: 'POST',
+            data: form,
+            success: function(res){
+                if (res == 'success'){
+                    window.location.href = window.location.href;
+                } else {
+                    alert(res)
+                }
+            }
+        })
+    });
+
+    $(document).on('submit', '.comment-form', function(e){
+        e.preventDefault()
+        form = $(this).serialize()
+        $.ajax({
+            url: '/submit-comment',
+            type: 'POST',
+            data: form,
+            dataType: 'json',
+            success: function(res){
+                console.log(res)
+            }
+        })
+    });
 });

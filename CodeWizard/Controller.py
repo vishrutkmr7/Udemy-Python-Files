@@ -11,7 +11,12 @@ urls = (
     '/logout', 'Logout',
     '/postregistration', 'PostRegistration',
     '/check-login', 'CheckLogin',
-    '/post-activity', 'PostActivity'
+    '/post-activity', 'PostActivity',
+    '/profile/(.*)/info', 'UserInfo',
+    '/settings', 'UserSettings',
+    '/update-settings', 'UpdateSettings',
+    '/profile/(.*)', 'UserProfile',
+    '/submit-comment', 'SubmitComment'
 )
 
 
@@ -34,7 +39,9 @@ class Home:
         if isCorrect:
             session_data['user'] = isCorrect
 
-        return render.Home()
+        post_model = Posts.Posts()
+        posts = post_model.get_all_posts()
+        return render.Home(posts)
 
 
 class Register:
@@ -76,6 +83,72 @@ class PostActivity:
         post_model = Posts.Posts()
         post_model.insert_post(data)
         return 'success'
+
+
+class UserProfile:
+    def GET(self, user):
+        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
+        login = LoginModel.LoginModel()
+        isCorrect = login.check_user(data)
+
+        if isCorrect:
+            session_data['user'] = isCorrect
+
+        post_model = Posts.Posts()
+        posts = post_model.get_all_posts()
+        user_info = login.get_profile(user)
+        return render.Profile(posts, user_info)
+
+
+class UserInfo:
+    def GET(self, user):
+        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
+        login = LoginModel.LoginModel()
+        isCorrect = login.check_user(data)
+
+        if isCorrect:
+            session_data['user'] = isCorrect
+
+        user_info = login.get_profile(user)
+
+        return render.Info(user_info)
+
+
+class UserSettings:
+    def GET(self):
+        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
+        login = LoginModel.LoginModel()
+        isCorrect = login.check_user(data)
+
+        if isCorrect:
+            session_data['user'] = isCorrect
+
+        return render.Settings()
+
+
+class UpdateSettings:
+    def POST(self):
+        data = web.input()
+        data.username = session_data['user']['username']
+
+        settings_model = LoginModel.LoginModel()
+        if settings_model.update_info(data):
+            return "success"
+        else:
+            return "A fatal error has occurred"
+
+
+class SubmitComment:
+    def POST(self):
+        data = web.input()
+        data.username = session_data['user']['username']
+
+        post_model = Posts.Posts()
+        added_comment = post_model.add_comment(data)
+        if added_comment:
+            return added_comment
+        else:
+            return {"error": 403}
 
 
 class Logout:

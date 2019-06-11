@@ -1,5 +1,4 @@
-import datetime
-import pymongo
+import datetime, pymongo, humanize
 from pymongo import MongoClient
 
 
@@ -36,9 +35,10 @@ print("Sum1:", m1, "Sum2:", m2)
 # Date Time
 current_date = datetime.datetime.now()
 print(current_date)
-old_date = datetime.datetime(2009, 8, 28)
-client = MongoClient()
-db = client.mydb
-Users = db.Users
-uid = Users.insert_one({'username': 'ids_fotowale', 'dob': old_date, 'today': current_date})
-print(uid.inserted_id)
+old_date = datetime.datetime(1986, 4, 26, 1, 23, 45)
+# client = MongoClient()
+# db = client.mydb
+# Users = db.Users
+# uid = Users.insert_one({'username': 'ids_fotowale', 'dob': old_date, 'today': current_date})
+print(old_date)
+print(humanize.naturaltime(current_date - old_date))

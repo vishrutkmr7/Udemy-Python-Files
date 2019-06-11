@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <ul class="sidebar">
+            <li><a href="#"><span class="mdi mdi-home"> </span> Home Feed </a> </li>
+            <li><a href="/profile/$session['user']['username']"><span class="mdi mdi-account-circle"> </span> Profiles </a> </li>
+            <li><a href="#"><span class="mdi mdi-email"> </span> Messages </a> </li>
+            <li><a href="#"><span class="mdi mdi-google-circles-group"> </span> Friends </a> </li>
+            <li><a href="#"><span class="mdi mdi-google-circles-communities"> </span> Communities </a> </li>
+            <li><a href="#"><span class="mdi mdi-bell"> </span> Notifications </a> </li>
+            <li class="separator"></li>
+            <li class="active"><a href="#"><span class="mdi mdi-settings"> </span> Settings </a> </li>
+            <li><a href="#"><span class="mdi mdi-help-circle"> </span> Help </a> </li>
+        </ul>
+        <div class="col-md-12">
+            <div class="profile-header">
+                <div class="background-image" style="background: url('/static/img/background.PNG');">
+                    <div class="avatar">
+                        <img src="/static/img/vishrutkmr7.jpg" class="profile-avatar">
+                        <h2 class="profile-name">$session['user']['name']</h2>
+                        <span class="profile-headline">Lv. 10 Programmer</span>
+                    </div>
+                </div>
+                <div class="profile-nav">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a href="/profile/$session['user']['username']">Activity</a> </li>
+                        <li><a href="/profile/$session['user']['username']/info">Info</a> </li>
+                        <li><a href="/profile/$session['user']['username']/code">Code</a> </li>
+                        <li><a href="/profile/$session['user']['username']/contact">Contact</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid">
+                <div class="grid-sizer"></div>
+
+                <div class="post-card extra-padding">
+                    <form id="settings-form">
+                        <h2 class="post-title">Basic Info</h2>
+                        <span class="post-subtitle">Name</span>
+                        <p><input name="name" class="form-control no-border" value="$session['user']['name']"> </p>
+<!--                        <span class="post-subtitle">About</span>-->
+<!--                        <p><textarea name="about" class="form-control no-border" value="$session['user']['about']"></textarea> </p>-->
+                        <span class="post-subtitle">Hobbies</span>
+                        <p><input name="hobbies" class="form-control no-border" value="$session['user']['hobbies']"> </p>
+                        <span class="post-subtitle">Birthday</span>
+                        <p><input name="Birthday" class="form-control no-border" value="$session['user']['birthday']"> </p>
+
+                        <button type="submit" class="btn btn-info btn-raised waves-effect">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
