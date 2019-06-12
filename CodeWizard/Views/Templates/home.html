@@ -29,7 +29,7 @@ $def with (posts)
                 $for post in posts:
                     <div class="post-card">
                         <div class="header">
-                            <div class="avatar"></div>
+                            <div class="avatar" style="background: url($post['user']['avatar']);"></div>
                             <a href="/profile/$post['username']">$post['user']['name']</a>
                             <label class="timestamp">$post['timestamp']</label>
                         </div>
@@ -45,18 +45,18 @@ $def with (posts)
                             $for comment in post['comments']:
                                 <div class="comment">
                                     <div class="header">
-                                        <div class="avatar"></div>
-                                        <span class="comment-timestamp pull-right">Posted $comment['timestamp']</span>
+                                        <div class="avatar"style="background: url($comment['user']['avatar']);"></div>
+                                        <label class="comment-timestamp pull-right">Posted $comment['timestamp']</label>
                                         <a href="/profile/$comment['username']">$comment['user']['name']</a><br>
                                         <span class="comment-content">$comment['comment-text']</span>
-                                </div>
+                                    </div>
                                 </div>
 
                             <div class="comment-add">
                                 <div class="header">
-<!--                                    <div class="avatar"></div>-->
+                                    <div class="avatar"style="background: url($post['user']['avatar']);"></div>
                                     <form class="comment-form">
-                                        <input name="post_id" class="hidden" value="$post['_id']">
+                                        <input name="post_id" class="hidden" style="display: hidden;" value="$post['_id']">
                                         <textarea name="comment-text" class="form-control" placeholder="Write a comment"></textarea>
                                         <button type="submit" class="btn btn-info btn-raised waves-effect btn-sn pull-right">Post comment</button>
                                     </form>
@@ -64,6 +64,7 @@ $def with (posts)
                             </div>
                         </div>
                     </div>
+
             </div>
         </div>
 </div>

@@ -1,6 +1,5 @@
-import web
+import web, os
 from Models import RegisterModel, LoginModel, Posts
-
 web.config.debug = False
 
 
@@ -16,7 +15,8 @@ urls = (
     '/settings', 'UserSettings',
     '/update-settings', 'UpdateSettings',
     '/profile/(.*)', 'UserProfile',
-    '/submit-comment', 'SubmitComment'
+    '/submit-comment', 'SubmitComment',
+    '/upload-image/(.*)', 'UploadImage'
 )
 
 
@@ -31,13 +31,6 @@ render = web.template.render("Views/Templates", base="MainLayout", globals={'ses
 # https://stackoverflow.com/questions/52439325/webpy-serving-static-files-staticapp-object-has-no-attribute-directory
 class Home:
     def GET(self):
-        data = type('obj', (object,), {"username": "admin", "password": "admin"})
-        # Auto login temp
-        login = LoginModel.LoginModel()
-        isCorrect = login.check_user(data)
-
-        if isCorrect:
-            session_data['user'] = isCorrect
 
         post_model = Posts.Posts()
         posts = post_model.get_all_posts()
@@ -87,12 +80,7 @@ class PostActivity:
 
 class UserProfile:
     def GET(self, user):
-        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
         login = LoginModel.LoginModel()
-        isCorrect = login.check_user(data)
-
-        if isCorrect:
-            session_data['user'] = isCorrect
 
         post_model = Posts.Posts()
         posts = post_model.get_all_posts()
@@ -102,13 +90,7 @@ class UserProfile:
 
 class UserInfo:
     def GET(self, user):
-        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
         login = LoginModel.LoginModel()
-        isCorrect = login.check_user(data)
-
-        if isCorrect:
-            session_data['user'] = isCorrect
-
         user_info = login.get_profile(user)
 
         return render.Info(user_info)
@@ -116,13 +98,8 @@ class UserInfo:
 
 class UserSettings:
     def GET(self):
-        data = type('obj', (object,), {"username": "admin", "password": 'admin'})
+        web.header("Content-Type", 'text/html; charset=utf-8')
         login = LoginModel.LoginModel()
-        isCorrect = login.check_user(data)
-
-        if isCorrect:
-            session_data['user'] = isCorrect
-
         return render.Settings()
 
 
@@ -157,6 +134,32 @@ class Logout:
         session_data['user'] = None
         session.kill()
         return "success"
+
+
+class UploadImage:
+    def POST(self, type):
+        file = web.input(avatar={}, background={})
+        file_dir = os.getcwd() + '/static/uploads/' + session_data['user']['username']
+
+        if not os.path.exists(file_dir):
+            os.mkdir(file_dir)
+
+        if "avatar" or "background" in file:
+            filepath = file[type].filename.replace('\\', '/')
+            filename = filepath.split("/")[-1]
+            f = open(file_dir + "/" + filename, 'wb')
+            # wb = write in binary mode
+            f.write(file[type].file.read())
+            f.close()
+            update = {}
+            update['type'] = type
+            update["img"] = '/static/uploads/' + session_data['user']['username'] + '/' + filename
+            update['username'] = session_data['user']['username']
+
+            account_model = LoginModel.LoginModel()
+            update_avatar = account_model.update_image(update)
+
+        raise web.seeother('/settings')
 
 
 if __name__ == '__main__':

@@ -68,7 +68,7 @@ $(document).ready(function(){
     $(document).on('submit', '#settings-form', function(e){
         e.preventDefault()
         form = $(this).serialize()
-        $ajax({
+        $.ajax({
             url: '/update-settings',
             type: 'POST',
             data: form,

@@ -10,7 +10,8 @@ class RegisterModel:
 
     def insert_user(self, data):
         hashed = bcrypt.hashpw(data.password.encode(), bcrypt.gensalt())
-        id = self.Users.insert({"username": data.username, "password": hashed, 'email': data.email, 'name': data.name})
+        id = self.Users.insert({"username": data.username, "password": hashed, 'email': data.email, 'name': data.name,
+                                "avatar": "", "background": "", "about": "", "hobbies": "", "Birthday": ""})
         print("uid is", id)
         myuser = self.Users.find_one({"username": data.username})
 

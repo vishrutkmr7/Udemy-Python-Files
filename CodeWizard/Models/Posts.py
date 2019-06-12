@@ -26,10 +26,7 @@ class Posts:
         for post in all_posts:
             # print(post)
             post['user'] = self.Users.find_one({"username": post['username']})
-            # if post['date_added']:
-            #     post['timestamp'] = humanize.naturaltime(datetime.datetime.now() - post['date_added'])
-            # else:
-            #     post['timestamp'] = "A day ago (by default)"
+            post['timestamp'] = humanize.naturaltime(datetime.datetime.now() - post['date_added'])
             post['timestamp'] = "1 min ago"
             post['old_comments'] = self.Comments.find({'post_id': str(post["_id"])})
             post['comments'] = []
@@ -38,7 +35,7 @@ class Posts:
                 # print(comment)
                 comment['user'] = self.Users.find_one({"username": comment['username']})
                 # same as timestamp above
-                comment['timestamp'] = "1 min ago"
+                comment['timestamp'] = humanize.naturaltime(datetime.datetime.now() - comment['date_added'])
                 post['comments'].append(comment)
 
             new_posts.append(post)
