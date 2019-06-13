@@ -1,9 +1,16 @@
-<h1>I'm on index.html</h1>
+{% extends 'base.html' %}
 
-{% for post in posts %}
-    <div>
-        <h3><a href="/post/{{ post.slug }}">{{ post.title }}</a></h3>
-        <label>{{ post.summary }}</label>
-        <p>{{ post.content }}</p>
-    </div>
-{% endfor %}
+{% block content %}
+    <h1>I'm on index.html</h1>
+
+    {% for post in posts %}
+        <div class="card card-header" style="background:url({{ post.image.url }})">
+            <h2><a href="/post/{{ post.slug }}">{{ post.title }}</a></h2>
+            <label>{{ post.summary }}</label>
+        </div>
+    {% endfor %}
+
+    <br>
+    <a href="/about">About</a>
+{% endblock %}
+
