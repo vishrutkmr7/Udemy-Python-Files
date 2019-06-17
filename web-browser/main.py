@@ -1,7 +1,7 @@
 import sys, os, json
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QLineEdit, QTabBar,
-                             QFrame, QStackedLayout, QTabWidget)
-from PyQt5.QtGui import QIcon, QWindow, QImage
+                             QFrame, QStackedLayout, QTabWidget, QKeySequenceEdit, QShortcut, QSplitter)
+from PyQt5.QtGui import QIcon, QWindow, QImage, QKeySequence
 from PyQt5.QtCore import *
 from PyQt5.QtWebEngineWidgets import *
 
@@ -17,10 +17,11 @@ class AddressBar(QLineEdit):
 class App(QFrame):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Web Browser")
+        self.setWindowTitle("V-Browser")
         self.CreateApp()
         self.setBaseSize(1366, 768)
         self.setMinimumSize(1366, 768)
+        self.setWindowIcon(QIcon("v.png"))
 
     def CreateApp(self):
         self.layout = QVBoxLayout()
@@ -33,6 +34,14 @@ class App(QFrame):
         self.tabbar.tabBarClicked.connect(self.switchTab)
         self.tabbar.setCurrentIndex(0)
         self.tabbar.setDrawBase(False)
+        self.tabbar.setLayoutDirection(Qt.LeftToRight)
+        self.tabbar.setElideMode(Qt.ElideLeft)
+
+        self.shortcutNewTab = QShortcut(QKeySequence("Ctrl+T"), self)
+        self.shortcutNewTab.activated.connect(self.AddTab)
+
+        self.shortcutReload = QShortcut(QKeySequence("Ctrl+R"), self)
+        self.shortcutReload.activated.connect(self.ReloadPage)
 
         # Keep track of tabs
         self.tabCount = 0
@@ -40,6 +49,7 @@ class App(QFrame):
 
         #Address Bar
         self.Toolbar = QWidget()
+        self.Toolbar.setObjectName("Toolbar")
         self.ToolbarLayout = QHBoxLayout()
         self.addressbar = AddressBar()
         self.addressbar.returnPressed.connect(self.BrowseTo)
@@ -90,11 +100,21 @@ class App(QFrame):
         # WebEngine View
         self.tabs[i].content = QWebEngineView()
         self.tabs[i].content.load(QUrl.fromUserInput("https://www.google.com/"))
+
+        self.tabs[i].content1 = QWebEngineView()
+        # Dev Tools
+        self.tabs[i].content1.load(QUrl.fromUserInput("https://localhost:667/"))
+
         self.tabs[i].content.titleChanged.connect(lambda: self.SetTabContent(i, "title"))
         self.tabs[i].content.iconChanged.connect(lambda: self.SetTabContent(i, "icon"))
+        self.tabs[i].content.urlChanged.connect(lambda: self.SetTabContent(i, "url"))
 
         # add webview to tab layout
-        self.tabs[i].layout.addWidget(self.tabs[i].content)
+        self.tabs[i].splitview = QSplitter()
+        self.tabs[i].splitview.setOrientation(Qt.Horizontal)
+        self.tabs[i].layout.addWidget(self.tabs[i].splitview)
+        self.tabs[i].splitview.addWidget(self.tabs[i].content)
+        self.tabs[i].splitview.addWidget(self.tabs[i].content1)
 
         # set top level tab from [] to layout
         self.tabs[i].setLayout(self.tabs[i].layout)
@@ -112,9 +132,12 @@ class App(QFrame):
         self.tabCount += 1
 
     def switchTab(self, i):
-        tab_data = self.tabbar.tabData(i)["object"]
-        tab_content = self.findChild(QWidget, tab_data)
-        self.container.layout.setCurrentWidget(tab_content)
+        if self.tabbar.tabData(i):
+            tab_data = self.tabbar.tabData(i)["object"]
+            tab_content = self.findChild(QWidget, tab_data)
+            self.container.layout.setCurrentWidget(tab_content)
+            new_url = tab_content.content.url().toString()
+            self.addressbar.setText(new_url)
 
     def BrowseTo(self):
         text = self.addressbar.text()
@@ -142,6 +165,13 @@ class App(QFrame):
         # tab1
         count = 0
         running = True
+
+        current_tab = self.tabbar.tabData(self.tabbar.currentIndex())["object"]
+        if current_tab == tab_name and type == 'url':
+            new_url = self.findChild(QWidget, tab_name).content.url().toString()
+            self.addressbar.setText(new_url)
+            return False
+
         while running:
             tab_data_name = self.tabbar.tabData(count)
 
@@ -180,6 +210,10 @@ class App(QFrame):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    os.environ['QTWEBENGINE_REMOTE_DEBUGGING'] = "667"
     window = App()
+
+    with open("style.css", "r") as style:
+        app.setStyleSheet(style.read())
 
     sys.exit(app.exec_())
