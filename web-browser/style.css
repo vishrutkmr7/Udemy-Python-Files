@@ -51,7 +51,7 @@ QTabBar::tab {
     padding-left:0px;
 }
 
-QTabBar::tab::first-child{
+QTabBar::tab:first-child{
     border-left: 1px solid #ddd
 }
 
