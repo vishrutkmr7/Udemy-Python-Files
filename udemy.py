@@ -42,3 +42,7 @@ old_date = datetime.datetime(1986, 4, 26, 1, 23, 45)
 # uid = Users.insert_one({'username': 'ids_fotowale', 'dob': old_date, 'today': current_date})
 print(old_date)
 print(humanize.naturaltime(current_date - old_date))
+
+# interpolation
+integer = 365
+print('there are %d days in a year' % integer)

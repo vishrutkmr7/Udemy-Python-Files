@@ -117,7 +117,7 @@ class App(QFrame):
         self.tabs[i].splitview.addWidget(self.tabs[i].content1)
 
         # set top level tab from [] to layout
-        self.tabs[i].setLayout(self.tabs[i].layout)
+        self.tabs[i].setLayout(self.tabs[i].layout) 
 
         # add tab to top level stackedwidget
         self.container.layout.addWidget(self.tabs[i])
