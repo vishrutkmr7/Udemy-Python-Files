@@ -1,11 +1,17 @@
 # pyaudio not installed...
-import pyglet, pyaudio, wave, speech_recognition as sr
+import pyglet, pyaudio, wave, subprocess, speech_recognition as sr
+from commands import Commander
 
 
 # file = pyglet.resource.media('audio/to-the-point.mp3')
 # file.play()
 #
 # pyglet.app.run()
+
+running = True
+
+def say(text):
+    subprocess.call('say ' + text, shell=True)
 
 def play_audio(filename):
     chunk = 1024
@@ -30,6 +36,7 @@ def play_audio(filename):
 
 
 r = sr.Recognizer()
+cmd = Commander()
 
 def initSpeech():
     print("Listening...")
@@ -49,6 +56,13 @@ def initSpeech():
         print("Couldn't get ya!")
 
     print("Your command:", command)
+    if command in ['quit', 'exit', 'bye', 'goodbye', 'stop']:
+        global running
+        running = False
+
+    # say('You said: ' + command)
+    cmd.discover(command)
 
 
-initSpeech()
+while running == True:
+    initSpeech()
